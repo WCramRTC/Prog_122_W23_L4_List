@@ -7,6 +7,71 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="198*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="259*"/>
+            <ColumnDefinition Width="541*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas Grid.Column="1" Margin="0,38,0,0" Grid.RowSpan="2">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF005308"/>
+                    <GradientStop Color="#FF262F75" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+
+            <RichTextBox Height="351" Width="431" Canvas.Left="55" Canvas.Top="42">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run x:Name="runDisplay"  Text="RichTextBox"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+
+        </Canvas>
+        <StackPanel x:Name="spAddStudent" Background="DeepSkyBlue" Grid.RowSpan="2" Visibility="Hidden">
+            <Label Content="First Name"/>
+            <TextBox x:Name="txtFirstName" TextWrapping="Wrap" Width="120"/>
+            <Label Content="Last Name"/>
+            <TextBox x:Name="txtLastName" TextWrapping="Wrap" Width="120"/>
+            <Label Content="Grade"/>
+            <TextBox x:Name="txtGrade" TextWrapping="Wrap" Width="120"/>
+            <Button x:Name="btnAddStudent" Content="Add New Student" Click="btnAddStudent_Click"/>
+            
+ 
+            
+        </StackPanel>
+        <Canvas Grid.Column="1" Background="#FFBBEBCC">
+            <Button x:Name="btnAddStudentPanel" Content="Add Student" Canvas.Left="29" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="69" Click="btnAddStudentPanel_Click" />
+            <Button x:Name="btnInsertPanel" Content="Insert" Canvas.Left="116" Canvas.Top="10" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnInsertPanel_Click" />
+            <Button x:Name="btnRemovePanel" Content="Remove" Canvas.Left="199" Canvas.Top="9" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnRemovePanel_Click"/>
+            <Button x:Name="btnRemoveAtPanel" Content="Remove At" Canvas.Left="280" Canvas.Top="8" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnRemoveAtPanel_Click"/>
+        </Canvas>
+        <StackPanel x:Name="spInsert" Background="Black" Grid.RowSpan="2" Visibility="Hidden">
+            <Label Content="Insert At"/>
+            <TextBox x:Name="txtInsertAt" TextWrapping="Wrap" Width="120"/>
+            <Button Content="Insert At" Click="Button_Click"/>
+        </StackPanel>
+        <StackPanel x:Name="spRemoveStudent"  Background="#FFE28E8E" Grid.RowSpan="2" Visibility="Hidden">
+
+            <Label Content="Remove Student"/>
+            <TextBox x:Name="txtRemoveName" TextWrapping="Wrap" Width="120"/>
+            <Button x:Name="btnRemoveStudent" Content="Remove Student" Click="btnRemoveStudent_Click"/>
+
+        </StackPanel>
+
+        <StackPanel x:Name="spRemoveAt" Background="#FF8EE2DF" Grid.RowSpan="2">
+
+
+            <Label Content="Remove At"/>
+            <TextBox x:Name="txtRemoveAt"  TextWrapping="Wrap" Width="120"/>
+            <Button x:Name="btnRemoveAt" Content="Remove At" Click="btnRemoveAt_Click"  />
+
+
+        </StackPanel>
 
     </Grid>
 </Window>
